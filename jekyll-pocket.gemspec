@@ -1,11 +1,11 @@
-require_relative 'lib/jekyll_pocket/version'
+require_relative 'lib/jekyll_pocket_links/version'
 
 Gem::Specification.new do |spec|
-  spec.name = "jekyll-pocket"
+  spec.name = "jekyll-pocket-links"
   spec.version = Jekyll::Pocket::VERSION
   spec.authors = ["playfulcorgi"]
   spec.email = ["unrulybeardedweekend@gmail.com"]
-  spec.homepage = "https://github.com/playfulcorgi/jekyll-pocket"
+  spec.homepage = "https://github.com/playfulcorgi/jekyll-pocket-links"
   spec.license = "MIT"
   spec.summary = "Fetch and render Pocket links in Jekyll."
   spec.files = Dir.chdir(File.expand_path('..', __FILE__)) do

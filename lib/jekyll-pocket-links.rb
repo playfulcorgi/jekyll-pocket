@@ -2,9 +2,9 @@ require 'jekyll'
 require 'net/http'
 require 'uri'
 require 'json'
-require 'jekyll_pocket/pocket_error'
+require 'jekyll_pocket_links/pocket_error'
 
-module JekyllPocket
+module JekyllPocketLinks
   class RenderPocketTag < Liquid::Tag
     def fetchPocketList(pocket_access_token, pocket_consumer_key)
       pocket_get_uri = 'https://getpocket.com/v3/get'
@@ -26,7 +26,7 @@ module JekyllPocket
       if !pocket_response.is_a?(Net::HTTPSuccess)
         puts pocket_response
 
-        raise ::JekyllPocket::PocketError.new(pocket_response)
+        raise ::JekyllPocketLinks::PocketError.new(pocket_response)
       end
 
       JSON.parse(pocket_response.body)['list']

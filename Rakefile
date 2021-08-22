@@ -1,4 +1,4 @@
-namespace 'jekyll-pocket' do
+namespace 'jekyll-pocket-links' do
   task :get_auth_code, [:consumer_key] do |_task, arguments|
     require 'net/http'
     require 'uri'
@@ -22,7 +22,7 @@ namespace 'jekyll-pocket' do
 
     if !pocket_response.is_a?(Net::HTTPSuccess)
       puts pocket_response
-      raise ::JekyllPocket::PocketError.new(pocket_response)
+      raise ::JekyllPocketLinks::PocketError.new(pocket_response)
 
       return
     end
@@ -74,13 +74,13 @@ namespace 'jekyll-pocket' do
 
       if pocket_response.code === 403
         if pocket_response.to_hash['x-error-code'] === '159'
-          raise ::JekyllPocket::PocketCodeAlreadyUsedError.new(pocket_response)
+          raise ::JekyllPocketLinks::PocketCodeAlreadyUsedError.new(pocket_response)
         end
         
-        raise ::JekyllPocket::PocketUnauthorizedError.new(pocket_response)
+        raise ::JekyllPocketLinks::PocketUnauthorizedError.new(pocket_response)
       end
 
-      raise ::JekyllPocket::PocketError.new(pocket_response)
+      raise ::JekyllPocketLinks::PocketError.new(pocket_response)
 
       return
     end

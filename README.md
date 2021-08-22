@@ -2,14 +2,14 @@
 
 Downloads links saved to Pocket and renders them using a Liquid tag in Jekyll. Links are fetched during build time and multiple lists can be rendered.
 
-!["Screenshot of jekyll-pocket listing Pocket links"](./README_assets/screenshot.png)
+!["Screenshot of jekyll-pocket-links listing Pocket links"](./README_assets/screenshot.png)
 
 ## Installation in Jekyll
 
-Add the `jekyll-pocket` gem to your Jekyll website:
+Add the `jekyll-pocket-links` gem to your Jekyll website:
 
 ```shell
-bundle add jekyll-pocket
+bundle add jekyll-pocket-links
 ```
 
 Next, create a private Pocket application by going to the [Pocket API page][4]. Choose the `Retrive` permission and the `Web` platform. Other values can be arbitrary.
@@ -25,7 +25,7 @@ Then run the following commands in order:
 # Replace your-pocket-app-consumer-key-here
 # with your consumer key.
 
-rake 'jekyll-pocket:get_auth_code[your-pocket-app-consumer-key-here]'
+rake 'jekyll-pocket-links:get_auth_code[your-pocket-app-consumer-key-here]'
 
 # 2.
 
@@ -40,7 +40,7 @@ rake 'jekyll-pocket:get_auth_code[your-pocket-app-consumer-key-here]'
 # consumer key and authentication-code-from-previous-command
 # with the value returned by the first Rake command.
 
-rake 'jekyll-pocket:authorize[your-pocket-app-consumer-key-here,authentication-code-from-previous-command]'
+rake 'jekyll-pocket-links:authorize[your-pocket-app-consumer-key-here,authentication-code-from-previous-command]'
 
 # 4.
 
