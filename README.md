@@ -22,23 +22,32 @@ Then run the following commands in order:
 
 # 1. 
 
-# Replace your-pocket-app-consumer-key-here with your consumer key.
+# Replace your-pocket-app-consumer-key-here
+# with your consumer key.
 
 rake 'jekyll-pocket:get_auth_code[your-pocket-app-consumer-key-here]'
 
 # 2.
 
-# The command will tell to visit a website. Do that and authorize the Pocket app. Authorizing will result in a page not found error. That's expected.
+# The command will tell to visit a website.
+# Do that and authorize the Pocket app.
+# Authorizing will result in a page not found error.
+# That's expected.
 
 # 3.
 
-# Replace your-pocket-app-consumer-key-here with your consumer key and authentication-code-from-previous-command with the value returned by the first Rake command.
+# Replace your-pocket-app-consumer-key-here with your
+# consumer key and authentication-code-from-previous-command
+# with the value returned by the first Rake command.
 
 rake 'jekyll-pocket:authorize[your-pocket-app-consumer-key-here,authentication-code-from-previous-command]'
 
 # 4.
 
-# Save the returned access token and consumer token as JEKYLL_POCKET_ACCESS_TOKEN and JEKYLL_POCKET_CONSUMER_KEY environment variables on your server.
+# Save the returned access token and consumer token
+# as JEKYLL_POCKET_ACCESS_TOKEN and
+# JEKYLL_POCKET_CONSUMER_KEY environment variables
+# on your server.
 ```
 
 ## Replacing the default template
