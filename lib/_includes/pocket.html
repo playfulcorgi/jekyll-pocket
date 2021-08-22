@@ -1,0 +1,14 @@
+{% if pocket_list.size > 0 %}
+  <h3>Links from <a href="https://getpocket.com/" rel="noopener noreferrer">Pocket</a></h3>
+  <ul>
+    {% for pocket_entry in pocket_list %}
+      <li>
+        <div>
+          <h4>{{pocket_entry.resolved_title}}</h4>
+          <div>{{pocket_entry.excerpt}}</div>
+          <a href="{{pocket_entry.resolved_url}}" rel="noopener noreferrer">Visit</a>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
